@@ -1,2 +1,5 @@
-mlmake: main.c lib/ml_toolbox.c
-	gcc -o ml_toolbox main.c lib/ml_toolbox.c -I. -Wall -lm
+CC=gcc
+CFLAGS=-I. -Wall -lm
+
+mlmake: main.o lib/ml_toolbox.o ../c_linalg/lib/linalg.o
+	$(CC) -o ml_toolbox main.o lib/ml_toolbox.o ../c_linalg/lib/linalg.o $(CFLAGS)
