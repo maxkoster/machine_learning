@@ -9,14 +9,17 @@ double sigmoid(double z){
     return (1/(1+pow(M_E,z)));
 }
 
-void mat_sigmoid(mat_type *matrix){
-    for (int i = 0; i < matrix->rows; i++){
-        for (int j = 0; j < matrix->cols; j++){
-            matrix->data[i][j] = sigmoid(matrix->data[i][j]);
-        }
+double relu(double z){
+    if (z < 0){
+        return 0;
     }
+    return z;
 }
 
-void test_func(){
-    printf("test\n");
+void mat_activation(double (*activation)(double), mat_type *matrix){
+    for (int i = 0; i < matrix->rows; i++){
+        for (int j = 0; j < matrix->cols; j++){
+            matrix->data[i][j] = activation(matrix->data[i][j]);
+        }
+    }
 }
