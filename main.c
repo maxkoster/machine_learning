@@ -3,19 +3,12 @@
 #include "../c_linalg/lib/linalg.h"
 
 int main() {
-    mat_type *test = create_random_matrix(4,1, -10, 10);
-    mat_type *test2 = copy_matrix(test);
-    print_matrix(test);
-    printf("\n");
-    mat_activation(relu, test2);
-    print_matrix(test);
-    printf("\n");
-    print_matrix(test2);
-    printf("\n");
-    print_mem_adresses(test);
-    printf("\n");
-    print_mem_adresses(test2);
-    destroy_matrix(test);
-    destroy_matrix(test2);
+    printf("%li\n",sizeof(mat_type));
+    printf("%li\n",sizeof(create_matrix(1,1)));
+
+    printf("%li\n",sizeof(unsigned int));
+    printf("%li\n",sizeof(unsigned int));
+    printf("%li\n",sizeof(int));
+    printf("%li\n",sizeof(double));
     return 0;
 }
