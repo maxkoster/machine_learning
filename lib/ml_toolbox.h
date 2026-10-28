@@ -22,5 +22,5 @@ double sigmoid(double z);
 double relu(double z);
 
 void mat_activation(double (*activation)(double), mat_type *matrix);
-network_type* create_network(unsigned int no_input_neurons, unsigned int no_layers, layer_type *layers[], double (*cost_function)(mat_type*));
+network_type* create_network(unsigned int no_input_neurons, unsigned int no_layers, layer_type **layers, double (*cost_function)(mat_type*));
 void destroy_network(network_type *network);
