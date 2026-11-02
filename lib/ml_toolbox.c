@@ -43,12 +43,12 @@ network_type* create_network(
 
     for(int i = 0; i < no_layers; i++){
         if( i == 0 ){
-            network->weights[i] = create_matrix(network->layers[i]->neurons, network->no_input_neurons);
+            network->weights[i] = create_matrix(network->layers[i]->no_neurons, network->no_input_neurons);
         }
         else{
-            network->weights[i] = create_matrix(network->layers[i]->neurons, network->layers[i-1]->neurons);
+            network->weights[i] = create_matrix(network->layers[i]->no_neurons, network->layers[i-1]->no_neurons);
         }
-        network->biases[i] = create_matrix(network->layers[i]->neurons,1);
+        network->biases[i] = create_matrix(network->layers[i]->no_neurons,1);
     }
 
     return network;
