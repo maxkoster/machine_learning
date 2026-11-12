@@ -3,12 +3,6 @@
 #include "../c_linalg/lib/linalg.h"
 
 int main() {
-    printf("%li\n",sizeof(mat_type));
-    printf("%li\n",sizeof(create_matrix(1,1)));
-
-    printf("%li\n",sizeof(unsigned int));
-    printf("%li\n",sizeof(unsigned int));
-    printf("%li\n",sizeof(int));
-    printf("%li\n",sizeof(double));
+    layer_type *layer_1 = {->no_neurons = 2, .neurons = create_matrix(2,1), .activation_function = relu};
     return 0;
 }
